@@ -1,24 +1,28 @@
-import logo from './logo.svg';
-import './App.css';
+import "./App.css";
+import AutoResizableBox from "./components/layout/AutoResizableBox";
+import { Counter } from "./components/counter/Counter";
+import List from "./components/callback/List";
+import Memo from "./components/memo/Memo";
+import Redcuer from "./components/reducer/Reducer";
+import Ref from "./components/ref/Ref";
+import ThemedComponent from "./components/theme/ThemedComponent";
+import { ThemeProvider } from "./app/contexts/ThemeContext";
+import TimerControlPanel from "./components/imperative/TimerControlPanel";
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <ThemeProvider>
+      <div className="App">
+        <Counter />
+        <Ref />
+        <Redcuer />
+        <ThemedComponent />
+        <List />
+        <Memo />
+        <TimerControlPanel />
+        <AutoResizableBox />
+      </div>
+    </ThemeProvider>
   );
 }
 
